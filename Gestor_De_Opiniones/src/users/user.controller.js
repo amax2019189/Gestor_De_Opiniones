@@ -29,7 +29,7 @@ export const usuariosPost = async (req, res) => {
 
 export const usuariosPut = async (req, res) => {
     const { id } = req.params;
-    const {_id, ...resto} = req.body;
+    const {_id, password, ...resto} = req.body;
 
     if(password) {
         const salt = bcryptjs.genSaltSync();

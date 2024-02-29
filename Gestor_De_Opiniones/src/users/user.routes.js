@@ -35,9 +35,6 @@ router.put(
     check("id").custom(existeUsuarioById),
     check("correo", "Email is mandatory").isEmail(),
     check("correo").custom(existeEmail),
-    check("password", "").isLength({
-      min: 6,
-    }),
     validarCampos,
   ],
   usuariosPut
