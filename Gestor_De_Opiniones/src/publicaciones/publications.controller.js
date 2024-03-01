@@ -25,7 +25,7 @@ export const publicationsPost = async (req, res) => {
 
 export const publicationsPut = async (req, res) => {
     const { id } = req.params;
-    const {_id, ...resto} = req.body;
+    const {_id, state, ...resto} = req.body;
     
     await Publications.findByIdAndUpdate(id, resto);
     const publications = await Publications.findOne({_id: id});
@@ -34,4 +34,13 @@ export const publicationsPut = async (req, res) => {
         msg: 'Update Publications',
         publications
     });
+}
+
+export const publicationsDelete = async (req, res) => {
+    const { id } = req.params;
+
+    const publications = await Publications.findByIdAndDelete(id, { state: false});
+    const publicationsAutenticado = req.publications;
+
+    res.status(200).json({msg:'Deleted publication', publications, publicationsAutenticado });
 }

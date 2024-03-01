@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import {
+    publicationsDelete,
     publicationsPost,
     publicationsPut,
 } from "./publications.controller.js";
@@ -20,6 +21,28 @@ router.post(
         validarCampos,
     ],
     publicationsPost
+);
+
+router.put(
+    "/:id",
+    [
+        validarJWT,
+        check("title", "The title is mandatory"),
+        check("category", "The category is mandatory"),
+        check("text", "The text is required"),
+        validarCampos,
+    ],
+    publicationsPut
+);
+
+router.delete(
+    "/:id",
+    [
+        validarJWT,
+        check("id","Not a valid ID").isMongoId(),
+        validarCampos,
+    ],
+    publicationsDelete
 );
 
 export default router;
