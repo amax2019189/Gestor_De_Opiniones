@@ -7,6 +7,7 @@ import {
 } from "./publications.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
+import { validarUser } from  "../middlewares/validar-users.js";
 import { existeUsuarioById } from "../helpers/db-validators.js";
 
 const router = Router();
@@ -39,6 +40,7 @@ router.delete(
     "/:id",
     [
         validarJWT,
+        validarUser,
         check("id","Not a valid ID").isMongoId(),
         validarCampos,
     ],

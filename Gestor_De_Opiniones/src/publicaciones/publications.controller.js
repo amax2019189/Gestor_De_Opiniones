@@ -1,10 +1,11 @@
 import { response, request, json } from "express";
 import bcryptjs from 'bcryptjs';
 import Publications from './publications.model.js';
+import User from '../users/user.model.js';
 
 export const getPublicationsById = async (req, res) => {
-    const {id} = req.params;
-    const publications = await Publications.findOne({_id: id});
+    const { id } = req.params;
+    const publications = await Publications.findOne({ _id: id });
 
     res.status(200).json({
         publications
@@ -13,8 +14,11 @@ export const getPublicationsById = async (req, res) => {
 
 export const publicationsPost = async (req, res) => {
 
-    const {title, category, text} = req.body;
-    const publications = new Publications( {title, category, text} );
+    const { title, category, text } = req.body;
+    const userId = req.user._id;
+    const user = await User.findById(userId);
+
+    const publications = new Publications({ title, category, text, user: userId });
 
     await publications.save();
 
@@ -24,23 +28,49 @@ export const publicationsPost = async (req, res) => {
 }
 
 export const publicationsPut = async (req, res) => {
-    const { id } = req.params;
-    const {_id, state, ...resto} = req.body;
-    
-    await Publications.findByIdAndUpdate(id, resto);
-    const publications = await Publications.findOne({_id: id});
+    try {
+        const { id } = req.params;
+        const { _id, ...resto } = req.body;
+        const{ user } = req;
 
-    res.status(200).json({
-        msg: 'Update Publications',
-        publications
-    });
+        const publics = await Publications.findById(id);
+
+        if (!publics || publics.user.toString() !== user._id.toString()) {
+            return res.status(403).json({
+                msg: 'Unauthorized access',
+            });
+        }
+
+        const publicationsActualizada = await Publications.findByIdAndUpdate(id, resto);
+ 
+ 
+        res.status(200).json({
+            msg: 'The post was updated successfully.',
+            publics: publicationsActualizada
+        });
+    } catch (e) {
+        console.error('Error creating publication', e);
+        res.status(500).json({ e: "Internal Server Error" });
+    }
 }
 
 export const publicationsDelete = async (req, res) => {
-    const { id } = req.params;
+    try {
+        const { id } = req.params;
+        const { user } = req;
 
-    const publications = await Publications.findByIdAndDelete(id, { state: false});
-    const publicationsAutenticado = req.publications;
+        const publication = await Publications.findById(id);
 
-    res.status(200).json({msg:'Deleted publication', publications, publicationsAutenticado });
+        if(!publication || publication.user.toString() !== user._id.toString()){
+            return res.status(403).json({
+                msg: 'Unauthorized access',
+            });
+        }
+
+        const deletedPublication = await Publications.findByIdAndDelete(id);
+        res.status(200).json({ msg: 'Deleted publication', publication: deletedPublication });
+    } catch(e) {
+        console.error('Error deleting publication', e);
+        res.status(500).json({ msg: 'Internal Server Error' });
+    }
 }

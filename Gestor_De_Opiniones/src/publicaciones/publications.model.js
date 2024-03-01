@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const PublicationsSchema = mongoose.Schema({
     title: {
@@ -12,6 +12,11 @@ const PublicationsSchema = mongoose.Schema({
     text: {
         type: String,
         require: [true, "The text is required"],
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        require: [true, "The user is required"],
     },
     state: {
         type: Boolean,
