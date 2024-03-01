@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Login",
+    "dateExported": "2024-03-01T13:48:53.555Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4fc86199-fa00-434c-8969-42e9cd4ee5cc",
+            "colId": "e324e04e-fb21-4228-8d81-b2aa272e4c2c",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:3000/opinionManagerApi/v1/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-29T17:21:50.995Z",
+            "modified": "2024-02-29T17:22:37.814Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"amax@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

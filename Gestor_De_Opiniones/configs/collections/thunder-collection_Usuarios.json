@@ -1,0 +1,52 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Usuarios",
+    "dateExported": "2024-03-01T13:49:07.682Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c809d8ad-4619-4754-951d-eed4a0b34f1b",
+            "colId": "3d7e4a1e-7510-4082-ac1d-17a9cd47cd99",
+            "containerId": "",
+            "name": "usuarioPost",
+            "url": "http://localhost:3000/opinionManagerApi/v1/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-29T17:14:30.890Z",
+            "modified": "2024-02-29T17:16:15.579Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Alejandro Max\",\n  \"email\": \"amax@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4ba20be6-93b9-4659-ac08-29912aca8765",
+            "colId": "3d7e4a1e-7510-4082-ac1d-17a9cd47cd99",
+            "containerId": "",
+            "name": "usuarioPut",
+            "url": "http://localhost:3000/opinionManagerApi/v1/users/65e1d87527be0a2634cb1b86",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-02-29T17:17:33.194Z",
+            "modified": "2024-03-01T13:34:49.945Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDg3NTI3YmUwYTI2MzRjYjFiODYiLCJpYXQiOjE3MDkyOTk4NTYsImV4cCI6MTcxMTg5MTg1Nn0.t4MhISPjMJ_KAx-9kFAaDrUHNGq2woWewHEAQisSmRg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Alejandro Matz\",\n  \"email\": \"amatz@kinal.edu.gt\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
