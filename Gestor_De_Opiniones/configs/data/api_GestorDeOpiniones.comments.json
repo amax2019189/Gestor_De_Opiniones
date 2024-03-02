@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "65e3ac3ebbc0420233403a23"
+  },
+  "publicationId": {
+    "$oid": "65e3aac2bbc0420233403a12"
+  },
+  "userId": {
+    "$oid": "65e3aa83bbc0420233403a0d"
+  },
+  "title": "Firts Comment",
+  "comments": "This is my first comment",
+  "state": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e3addc086aefb1e91b28df"
+  },
+  "publicationId": {
+    "$oid": "65e3aac2bbc0420233403a12"
+  },
+  "userId": {
+    "$oid": "65e3aa83bbc0420233403a0d"
+  },
+  "title": "Second Comment",
+  "comments": "This is my second comment",
+  "state": true,
+  "__v": 0
+}]

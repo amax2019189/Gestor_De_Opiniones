@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "Usuarios",
-    "dateExported": "2024-03-01T17:20:06.883Z",
+    "dateExported": "2024-03-02T23:05:54.545Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "c809d8ad-4619-4754-951d-eed4a0b34f1b",
-            "colId": "3d7e4a1e-7510-4082-ac1d-17a9cd47cd99",
+            "_id": "9a87f28f-984a-4e0b-842f-73ff7eff5b91",
+            "colId": "49ac6873-cd00-4023-b1d8-4b5158e6eb7b",
             "containerId": "",
             "name": "usuarioPost",
             "url": "http://localhost:3000/opinionManagerApi/v1/users",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-29T17:14:30.890Z",
-            "modified": "2024-02-29T17:16:15.579Z",
+            "created": "2024-03-02T21:31:16.579Z",
+            "modified": "2024-03-02T21:31:16.579Z",
             "headers": [],
             "params": [],
             "body": {
@@ -25,15 +25,15 @@
             "tests": []
         },
         {
-            "_id": "4ba20be6-93b9-4659-ac08-29912aca8765",
-            "colId": "3d7e4a1e-7510-4082-ac1d-17a9cd47cd99",
+            "_id": "e5fe98d9-58a8-406c-9bf6-3fd4727dbda7",
+            "colId": "49ac6873-cd00-4023-b1d8-4b5158e6eb7b",
             "containerId": "",
             "name": "usuarioPut",
             "url": "http://localhost:3000/opinionManagerApi/v1/users/65e1d87527be0a2634cb1b86",
             "method": "PUT",
             "sortNum": 20000,
-            "created": "2024-02-29T17:17:33.194Z",
-            "modified": "2024-03-01T13:34:49.945Z",
+            "created": "2024-03-02T21:31:16.580Z",
+            "modified": "2024-03-02T21:31:16.580Z",
             "headers": [
                 {
                     "name": "x-token",

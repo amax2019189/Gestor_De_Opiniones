@@ -1,25 +1,25 @@
 {
     "client": "Thunder Client",
     "collectionName": "Login",
-    "dateExported": "2024-03-01T17:19:53.102Z",
+    "dateExported": "2024-03-02T23:05:37.983Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "4fc86199-fa00-434c-8969-42e9cd4ee5cc",
-            "colId": "e324e04e-fb21-4228-8d81-b2aa272e4c2c",
+            "_id": "12d9cb83-d0fa-49de-a9b4-6388d4a2e5b7",
+            "colId": "c4bd46d1-9c90-4ae9-8405-bec34bef4dff",
             "containerId": "",
             "name": "login",
             "url": "http://localhost:3000/opinionManagerApi/v1/auth/login",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-29T17:21:50.995Z",
-            "modified": "2024-03-01T16:22:09.312Z",
+            "created": "2024-03-02T21:31:05.198Z",
+            "modified": "2024-03-02T22:39:36.874Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\": \"amatz@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
+                "raw": "{\n  \"email\": \"amax@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
                 "form": []
             },
             "tests": []

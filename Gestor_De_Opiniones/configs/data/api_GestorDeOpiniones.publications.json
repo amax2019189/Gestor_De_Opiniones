@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "65e3aac2bbc0420233403a12"
+  },
+  "title": "Publications 1",
+  "category": "First category",
+  "text": "This is the first publication",
+  "user": {
+    "$oid": "65e3aa83bbc0420233403a0d"
+  },
+  "state": true,
+  "__v": 0
+}]
